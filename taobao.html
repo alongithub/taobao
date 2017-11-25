@@ -1,0 +1,143 @@
+<!---------------------------------------------------------------------------------------- 
+--		   淘宝触屏版， author by along，17.9.8  -  9.12                                --
+--			                                                     						--
+--  1、删除字符串左右空格str.replace(/(^\s*)|(\s*$)/g, "");		  						--
+--		                                                         						--
+--  2、g全局替换“<br>” replace(/<br>/g,""),没有g只替换第一个      						--
+--                                                                						--
+--  3、获取元素实际高度 box.clientHeight;//谷歌浏览器跟火狐结果不一致          			--
+--                                                                						--
+--  4、获取窗口宽度 document.clientWidth                          						--
+--                                                               						--
+--  5、a标签下img会有间隙的问题															--
+--		1)、img{vertical-align: bottom;}						 						--
+--		2)、img{display:block}                                   						--
+-- 		3)、a{line-height:0;}															--
+--		4)、a{font-size:0;}                                      						--
+-- 																 						--
+--  6、文字无法显示部分以省略号代替													    --
+--     text-overflow: ellipsis;overflow: hidden;white-space: nowrap;                    --
+--																						--
+--  7、添加新的css 																		--
+-- 		document.styleSheets[0].insertRule('.banner_li{width:'+windowWidth+'px;}',0);   --
+--  																					--
+--  8、Data对象																			--
+ ---------------------------------------------------------------------------------------->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>www.taobao.com</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+</head>
+	<link rel="stylesheet" type="text/css" href="css/taobao.css">
+<body>
+<div id="start">
+</div>
+<!-- --------------顶部搜索框------------------------ -->
+<div id="main" style="display: none;">
+<div id="header">
+	<div class="search_wrapper">
+		<div class="logo"></div>
+		<div class="input_wrapper">
+			<!--<input type="text" id="search" placeholder="寻找宝贝店铺">-->
+			<p id="search" contenteditable="true">
+				<span class="tips" id="search_tips" contenteditable="false">寻找宝贝店铺</span>
+			</p>
+		</div>
+	</div>
+</div>
+<!---------------- 打开手机app广告 -------------------->
+<div id="ad">
+	<a href="javascript:;" onclick="document.getElementById('ad').style.cssText= 'opacity:0;height:0;'"><img src="images/close.png" class="close" /></a>
+	<a href="javascript:;"><img src="images/logo2.jpg" class="logo2" /></a>
+	<input type="button" value="立即打开">
+	<p>
+		打开手机App
+		<br>
+		<span>随时随地  想淘就淘</span>
+	</p>
+</div>
+<div id="banner">
+</div>
+<div id="navtype">
+</div>
+<div id="news">
+	<div class="left">
+		<img src="images/taobaotoutiao.jpg"/>	
+	</div>
+	<div class="right">
+		<div class="fengqiang">
+			<span id="new_tip">爽翻</span>
+		</div>
+		<div id="new">
+			<ul>
+				<li><a href="javascript:;" id="new_dis">999元开战机</a></li>				
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- ----------------------------限时抢购商品-------------------------------------- -->
+<div id="rob">
+</div>
+<div id="cheapness" class="merchandiselist">
+	<p><span class="title">超实惠</span></p>
+</div>
+<div id="mustbuy" class="merchandiselist">
+	<p><span class="title">天猫必逛</span></p>
+</div>
+<div id="features" class="merchandiselist">
+	<p><span class="title">特色好货</span></p>
+</div>
+<div class="ad2">
+	<div class="top">
+		<img src="images/quanminqianghua.jpg"/>
+		<img src="images/chi.jpg"/>
+		<img src="images/more1.jpg"/>
+		<span>更多服务></span>
+	</div>
+	<div class="bottom">
+		<img src="images/001yuan.jpg">
+	</div>
+</div>
+<div id="hot" class="merchandiselist">
+	<p><span class="title">热门市场</span><a href="javascript:;">更多</a></p>
+</div>
+<div class="ad3">
+	<img src="images/skillget.jpg"/>
+</div>
+<div id="goodshop">
+	<div class="top">
+		<span>每日好店</span>
+		<a href="javascript:;">更多></a>
+	</div>
+	<div class="shops">
+		<div class="left" id="shop_left">
+		</div>
+		<div class="right" id="shop_right">
+		</div>
+	</div>
+</div>
+<div id="youlike">
+	<p><span class="title">超实惠</span></p>
+	<p class="dis">实时推荐你最喜欢的宝贝</p>
+	<div id="youlike_list">
+	</div>
+</div>
+<div style="height: 60px;"></div>
+<div id="footer">
+	<ul>
+		<li><div><a href="javascript:;"><img src="images/homebtn.jpg"><p>首页</p></a></div></li>
+		<li><div><a href="javascript:;"><img src="images/wuliu.jpg"><p>物流</p></a></div></li>
+		<li><div><a href="javascript:;"><img src="images/shopcart.jpg"><p>购物车</p></a></div></li>
+		<li><div><a href="javascript:;"><img src="images/mytaobao.jpg"><p>我的淘宝</p></a></div></li>
+		<li><div><a href="javascript:;"><img src="images/morebtn.jpg"><p>更多</p></a></div></li>
+	</ul>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="js/taobao.js"></script>
+</html>
